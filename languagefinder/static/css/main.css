@@ -1,0 +1,48 @@
+
+
+/* ******************************* HEADER CSS ******************************* */
+.siteTitle {
+    text-align: center;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-around
+}
+
+.theNavbarList {
+    width: 12em;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-top: 0.7em;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+}
+
+.loggedInNavList {
+    display: flex;
+    text-decoration: none;
+    width: 15em;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-top: 0.7em;
+}
+
+
+
+/*****************************************MAP AND SEARCH BAR**************************************/
+
+#map {
+    height: 600px;
+    margin: 2em;
+}
+
+.geoCodingForm {
+    display: flex;
+    justify-content: center;
+}
