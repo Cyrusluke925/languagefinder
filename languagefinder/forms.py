@@ -1,5 +1,5 @@
 from django import forms
-from languageit.models import UserProfileInfo
+from languagefinder.models import UserProfileInfo
 from django.contrib.auth.models import User
 
 class UserForm(forms.ModelForm):

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Language It</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/main.css' %}" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg" defer></script>
+    <script src="{% static 'scripts/app.js' %}" defer></script>
+</head>
+<body>
+    <header class='siteHeader'>
+        {% if user.is_authenticated %}
+        <nav class='navbar'>
+            <a class='navLink' href="{%url 'home' %}"><h1 class='siteTitle'>Language It!</h1></a>
+            <ul class='loggedInNavList'>
+                <a class='navLink' href=""><li class='navListItem'>Add To Map</li></a>
+                <li class='navListItem'>Profile</li>
+                <a class='navLink' href="{% url 'logout' %}"><li class='navListItem'>Logout</li></a>
+            </ul>
+        </nav>
+        {% else %}
+        <nav class='navbar'>
+                <a class='navLink' href="{% url 'home' %}"><h1 class='siteTitle'>Language It!</h1></a>
+                <ul class='theNavbarList'>
+                    <a class='navLink' href="{% url 'register' %}"><li class='navListItem'>Create Account</li></a>
+                    <a class='navLink' href="{% url 'login' %}"><li class='navListItem'>Login</li></a>
+                </ul>
+            </nav>
+        {% endif %}
+    </header>
+    {% block register %}
+    {% endblock %}
+    {% block homepage %}
+    {% endblock %}
+    {% block login %}
+    {% endblock %}
+    {% block addtomap %}
+    {% endblock %}
+</body>
+</html>

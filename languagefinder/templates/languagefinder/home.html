@@ -1,0 +1,11 @@
+{% extends 'languagefinder/base.html' %}
+
+{% block homepage %}
+<form class='geoCodingForm' name='addressForm'>
+        <input class='addressBar' name='address' type='text' placeholder='Enter A Location...'>
+        <input type='submit' placeholder='search'>
+</form>
+<div id="map">
+</div>
+
+{% endblock %}
