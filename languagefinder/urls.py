@@ -8,4 +8,5 @@ urlpatterns = [
     path('logout', views.user_logout, name='logout'),
     path('hello', views.hello, name='hello'),
     path('api/markers', views.sendJsonMarkers, name='sendJsonMarkers'),
+    path('language/new', views.newLanguage, name='newLanguage')
 ]
