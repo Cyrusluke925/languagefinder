@@ -3,5 +3,27 @@
 <div class='mapAndForm'>
     <h1>Add To Map</h1>
     <h4>Please select a primary language your work uses and type in your location.</h4>
+
+
+<div class='dropdownAndSearch'>
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">Languages</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">JavaScript</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Python</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ruby</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+          <form class='geoCodingFormSearch' name='addressForm'>
+            <input class='addressBar' name='address' type='text' placeholder='Enter A Location...'>
+            <input type='submit' placeholder='search'>
+    </form>
 </div>
+    <div id="map"></div>
+    </div>
 {% endblock %}

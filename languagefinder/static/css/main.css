@@ -20,8 +20,8 @@ nav {
 }
 
 .navLink {
-    text-decoration: none;
-    color: black;
+    text-decoration: none !important;
+    color: black !important;
 }
 
 .loggedInNavList {
@@ -38,11 +38,40 @@ nav {
 /*****************************************MAP AND SEARCH BAR**************************************/
 
 #map {
-    height: 600px;
-    margin: 2em;
+    height: 600px !important;
+    margin: 2em !important;
 }
 
 .geoCodingForm {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.hiddenMap {
+    display: none;
+}
+
+
+
+/* ************************************** ADD TO MAP PAGE ************************************************************ */
+.geoCodingFormSearch {
+
+    display: flex !important;
+    justify-content: center !important;
+    width: 35%;
+
+}
+
+
+div.pure-menu.pure-menu-horizontal {
+    width: 150px;
+}
+.dropdownAndSearch {
     display: flex;
     justify-content: center;
+    margin-bottom: 4em;
 }
+
+
+
+
