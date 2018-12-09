@@ -8,6 +8,39 @@
 
 
 
+$.ajax({
+    method: 'GET',
+    url: `http://localhost:8000/api/markers`,
+    success: displaypins,
+    error: function onError(err1, err2, err3) {
+        console.log(err1)
+        console.log(err2)
+        console.log(err3)
+    }
+})
+
+
+    function displaypins(response) {
+        
+        for (var i = 0; i < response.markers.length; i += 1) {
+            let currentLanguage = response.markers[i]
+            let latitudeLocation = parseInt(currentLanguage.latitude, 10);
+            let longitudeLocation = parseInt(currentLanguage.longitude, 10);
+        
+            let latlng = {lat: latitudeLocation, lng: longitudeLocation}
+            // let map = new google.maps.Map(document.getElementById('map'), {
+            //     center: latlng,
+            //     zoom: 10
+            //     });
+            let marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: currentLanguage.title,
+                icon: `${currentLanguage.symbol}`
+            })
+        }
+    }
+
     function geoString(inputFieldData) {
         let newInputFieldStr = '';
         for (var i = 0; i < inputFieldData.length; i += 1) {
@@ -122,7 +155,6 @@ function newAddressSuccess(response) {
     console.log(`The Latitude is ${latitudeLocation} and the longitude is ${longitudeLocation}` )
     let latlng = {lat: latitudeLocation, lng: longitudeLocation}
 
-    console.log(markerData)
     $.ajax({
         method: 'POST',
         url: `language/new`,
