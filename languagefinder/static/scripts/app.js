@@ -116,12 +116,13 @@ function newAddressSuccess(response) {
         title: language,
         latitude: latitudeLocation,
         longitude: longitudeLocation,
-        marker: 'http://maps.google.com/mapfiles/ms/icons/'+color+'.png'
+        symbol: 'http://maps.google.com/mapfiles/ms/icons/'+color+'.png'
     }
 
     console.log(`The Latitude is ${latitudeLocation} and the longitude is ${longitudeLocation}` )
     let latlng = {lat: latitudeLocation, lng: longitudeLocation}
 
+    console.log(markerData)
     $.ajax({
         method: 'POST',
         url: `language/new`,
