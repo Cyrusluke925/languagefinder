@@ -72,3 +72,27 @@ def user_login(request):
     else:
         
         return render(request, 'languagefinder/login.html', {})
+
+
+
+
+@login_required
+@csrf_exempt
+def new_language(request):
+    print('enters new language function')
+    if request.method == "POST":
+        # if form.is_valid:
+        #   post = form.save(commit=False)
+        print(request.user)
+        print('THIS IS THE DATA THAT IS SENT OVER')
+        # print(request.body)
+        title = request.POST.get('title')
+        latitude = request.POST.get('latitude')
+        symbol = request.POST.get('symbol')
+        longitude = request.POST.get('longitude')
+        print(request.POST.get('name'))
+        marker = Marker(title = title, latitude = latitude, longitude = longitude, symbol = symbol, user = request.user)
+        marker.save()
+        markers = list(Marker.objects.all().values('title', 'latitude', 'longitude', 'symbol', 'user'))
+
+        return JsonResponse({'markers': markers})

@@ -12,10 +12,10 @@ class UserProfileInfo(models.Model):
 
 class Marker(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
-    latitude = models.IntegerField()
-    longitude = models.IntegerField()
+    latitude = models.TextField()
+    longitude = models.TextField()
     title = models.CharField(max_length=40)
-    symbol = models.TextField()
+    symbol = models.URLField()
 
     def __str__(self):
         return self.user.username 
