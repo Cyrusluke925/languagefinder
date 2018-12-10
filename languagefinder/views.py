@@ -96,3 +96,17 @@ def new_language(request):
         markers = list(Marker.objects.all().values('title', 'latitude', 'longitude', 'symbol', 'user'))
 
         return JsonResponse({'markers': markers})
+
+
+@login_required
+def view_profile(request):
+    markers = Marker.objects.all()
+    markers_list = []
+    for marker in markers:
+        if marker.user == request.user:
+            markers_list.append(marker)
+    user = request.user
+
+    return render(request, 'languagefinder/profile.html', {'user': user, 'markers_list': markers_list})
+
+

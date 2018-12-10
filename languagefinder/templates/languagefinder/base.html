@@ -22,7 +22,7 @@
             <a class='navLink' href="{%url 'home' %}"><h1 class='siteTitle'>Language It!</h1></a>
             <ul class='loggedInNavList'>
                 <a class='navLink' href="{% url 'hello' %}"><li class='navListItem'>Add To Map</li></a>
-                <li class='navListItem'>Profile</li>
+                <a class='navLink' href="{% url 'profile' %}"><li class='navListItem'>Profile</li></a>
                 <a class='navLink' href="{% url 'logout' %}"><li class='navListItem'>Logout</li></a>
             </ul>
         </nav>
@@ -43,6 +43,8 @@
     {% block login %}
     {% endblock %}
     {% block addtomap %}
+    {% endblock %}
+    {% block profile %}
     {% endblock %}
 </body>
 </html>
