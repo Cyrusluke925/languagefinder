@@ -1,0 +1,18 @@
+{% extends 'languagefinder/base.html' %}
+{% block profile %}
+<div class='profilePage'>
+    <h2>Hello, {{request.user.username}}</h2>
+</div>
+<div class='locationsList'>
+    {% for marker in markers_list %}
+    <div>
+        <ul>
+            <li class='profileListItem'>Language: {{marker.title}}</li>
+            <li class='profileListItem'>Long:{{marker.longitude}} Lat: {{marker.latitude}}</li>
+            <hr>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
