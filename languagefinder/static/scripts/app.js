@@ -86,12 +86,7 @@ $.ajax({
 
         let color = 'blue'
 
-    let marker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        title: "Marker Example",
-        icon: 'http://maps.google.com/mapfiles/ms/icons/'+color+'.png'
-    })
+
     document.forms['addressForm'].reset()
     }
 
